@@ -3,6 +3,7 @@
 //: ### Let me show you an example
 func greet(_ person: String, _ day: String) -> String {
     print(person)
+    print(person ?? "default") //untuk kasih default value dengan tanda tanya double. jadi jika person kosong, akan diisi default
     return "Hello \(person), today is \(day)"
 }
 
@@ -14,6 +15,32 @@ func greet(orang person: String) -> String {
     print(person)
     return "ASD"
 }
+
+func greeting(person: String, withSalute salute: String) -> String{
+    return salute
+}
+
+func greetings(person: String, withSalute salute: String = "SALUTEE") -> String{
+    return salute
+}
+
+func greetings_optional(person: String?, withSalute salute: String = "SALUTEE") -> (String){
+    print(person!)
+    return salute
+}
+
+
+var selamat = greet("thing", "monday")
+print(selamat)
+
+var orang_hehe = greeting(person: "orang", withSalute: "hehe")
+print(orang_hehe)
+
+var orang_hehes = greetings(person: "orang")
+print(orang_hehes)
+
+var orang_hehes1 = greetings_optional(person: "orang hehe")
+print(orang_hehes1)
 
 import UIKit
 func showError(from: UIViewController) {
@@ -32,6 +59,8 @@ var aaaa: [String] = ["haha","hihi","huhu", "hehe"]
 
 //aaaa.remove(at: 0)
 
+aaaa.remove(at: 3)
+
 aaaa.index(of: "huhu")
 aaaa.index(after: 1)
 
@@ -45,6 +74,7 @@ func index(_ number: Int) {
 
 index("asdf")
 index(123)
+print(aaaa)
 
 
 // overloading
@@ -64,13 +94,14 @@ func abc() -> Int {
 
 
 // tupple
-func calculateStats() -> (Int, Int, Int) { // mean, min, max {
+func calculateStats() -> (Int, Int, Int?) { // mean, min, max {
     return (1,2,3)
 }
 
 let result = calculateStats()
 print(result.0)
 print(result.1)
+print(result.2!)
 print(result.2)
 
 
@@ -93,6 +124,7 @@ func makeIncrementor() -> (Int) -> Int {
 
 let newFunc = makeIncrementor()
 newFunc(2)
+print(newFunc(2))
 
 
 //: ## Function that receive another function
@@ -105,6 +137,7 @@ func filter(from array: [Int], with method: (Int) -> Bool) -> [Int] {
     for element in array where method(element) {
         newArray.append(element)
     }
+    print("test")
     return newArray
 }
 
@@ -112,7 +145,8 @@ func filterMethod(_ input: Int) -> Bool {
     return input % 2 == 0
 }
 
-
+//let asd = filter(from: arr, with: filterMethod)
+//print(asd)
 
 //: ## Let's move on!
 //: [Next](@next)

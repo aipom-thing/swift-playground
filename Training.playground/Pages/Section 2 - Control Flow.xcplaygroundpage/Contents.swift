@@ -11,6 +11,12 @@
 //: ### if - else statement
 let a = 100
 let b = 11
+
+if a==100, b==11{
+    print("yeay!!")
+}
+
+
 if a % 2 == 0, b % 2 == 0 {
     print("genap")
 } else if b == 10 {
@@ -23,10 +29,10 @@ if a % 2 == 0, b % 2 == 0 {
 //: #### switch - case
 let foo = 1
 switch foo {
-case 1: print("isinya 1")
+case 1, 5, 6: print("isinya 1")
 case 2: print("isinya 2")
 case 3: print("isinya 3")
-default: print("apapun")
+default: print("apapun") //wajib ada
 }
 
 
@@ -39,6 +45,16 @@ func test() {
 }
 test()
 
+var optional_1: Int? = nil
+func test1(){
+    guard optional_1 == 123 else{
+        print("nil")
+        return
+    }
+    print(optional_1)
+}
+
+test1()
 
 
 //:  if - let
@@ -49,6 +65,13 @@ if let unwrapped = optional {
 }
 
 
+//var optional_1 = nil
+//if let unwrapped = optional {
+//    print(unwrapped)
+//} else {
+//    optional_1 = 123
+//    print("isinya nil")
+//}
 
 //: ## Iterative Control Flow (Loop)
 //: ### for - in loop
@@ -58,7 +81,17 @@ for element in array {
     print(element)
 }
 
+
+//for (int i = 1; i<10; i++)
+
 for i in 1..<10 {
+    print(i)
+}
+
+
+//for (int i = 1; i<=10; i++)
+
+for i in 1...10 {
     print(i)
 }
 

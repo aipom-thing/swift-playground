@@ -15,12 +15,13 @@
 //: # Let's Start Small
 //: ### print statement
 //: every 3 or more blank lines means this is your space to jot something down as comment or start doing the code!
-
+print("asdf")
 
 
 //: ### let vs var
 let a = 1 // immutable, constant
 var b = 2
+
 
 var floatingNumber = 1.0 // Double, Float
 var iniFloatType: Float = 1.0
@@ -31,7 +32,7 @@ var iniDouble: Double = 1.0
 //: # Swift Optionals
 var foo: Int?
 foo = 123
-print(foo!)
+print(foo!) //force unwrap
 
 var normal: Int = 123
 print(normal)
